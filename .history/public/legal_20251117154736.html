@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal - RAW DATA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        /* Page specific styles */
+        .legal-content {
+            padding: 100px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .legal-section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 102, 204, 0.1); /* Subtle blue border */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        h1 { color: var(--primary-blue); margin-bottom: 10px; }
+        .last-updated { color: #888; font-size: 0.9rem; margin-bottom: 30px; display: block;}
+        
+        h2 { margin-top: 40px; margin-bottom: 15px; font-size: 1.5rem; border-bottom: 2px solid #f4f7fb; padding-bottom: 10px; }
+        h3 { margin-top: 25px; font-size: 1.1rem; color: var(--text-dark); }
+        
+        ul { list-style: disc; margin-left: 20px; color: var(--text-grey); margin-bottom: 15px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        p { color: var(--text-grey); margin-bottom: 15px; line-height: 1.6; }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--text-grey);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: var(--primary-blue); transform: translateX(-5px); }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo1.png" alt="RAW DATA" onerror="this.style.display='none'">
+                    <span>AI Data Services</span>
+                </a>
+            </div>
+            <nav class="navbar">
+                <a href="index.html" class="btn-nav">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container legal-content">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Homepage</a>
+
+            <div class="legal-section">
+                <h1>Legal & Policies</h1>
+                <span class="last-updated">Last Updated: November 2025</span>
+
+                <h2 id="privacy">1. Privacy Policy</h2>
+                <p>We respect your privacy. As this website is a <strong>Full-Stack Portfolio Project</strong>, our data handling practices are as follows:</p>
+                
+                <h3>1.1 Data Collection</h3>
+                <p>Any information entered into the "Contact Form" (Name, Email, Project Details) is processed by a local Python backend environment for demonstration purposes only.</p>
+                
+                <h3>1.2 Data Usage</h3>
+                <ul>
+                    <li><strong>No Storage:</strong> We do not store your personal data on public servers.</li>
+                    <li><strong>No Sharing:</strong> No data is sold, traded, or shared with third-party marketing agencies.</li>
+                    <li><strong>Cookies:</strong> This website does not use tracking cookies or analytics software.</li>
+                </ul>
+
+                <h2 id="terms" style="margin-top: 50px;">2. Terms of Service</h2>
+                <p>Please read these terms carefully before using the RAW DATA website.</p>
+
+                <h3>2.1 Portfolio Demonstration</h3>
+                <p>You acknowledge that this website is a <strong>software development portfolio</strong> created by <strong>Swasthik</strong>. The services listed (including Image Collection, Annotation, and Transcription) are representative of industry standards but are not currently offered as commercial services by this specific entity.</p>
+
+                <h3>2.2 Intellectual Property</h3>
+                <p>The code, design, and architecture of this website are the intellectual property of the developer. You may view the source code on GitHub for educational purposes.</p>
+
+                <h3>2.3 Disclaimer</h3>
+                <p>The materials on this website are provided on an 'as is' basis. The developer makes no warranties, expressed or implied, regarding the accuracy or reliability of the AI services described herein.</p>
+
+                <div style="margin-top: 50px; padding: 25px; background: #eef8ff; border-radius: 8px; border-left: 5px solid var(--primary-blue);">
+                    <h3 style="margin-top: 0; color: var(--primary-blue);">Developer Contact</h3>
+                    <p>For hiring inquiries, code reviews, or collaboration opportunities, please contact the developer directly.</p>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/swasthiik/" target="_blank">linkedin.com/in/swasthiik</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/swasthiik" target="_blank">github.com/swasthiik</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2025</span> RAW DATA Services. Developed by Swasthik.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
