@@ -79,19 +79,18 @@ ul { list-style: none; }
 .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
 .step-number { font-size: 2.5rem; font-weight: 800; color: rgba(0, 102, 204, 0.1); margin-bottom: 10px; }
 
-/* --- Services (Glassmorphism) --- */
+/* --- Services --- */
 .services-section { padding: 80px 0; }
 .glass-card { background: var(--glass-bg); border: var(--glass-border); backdrop-filter: blur(8px); border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; }
 .glass-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color: var(--accent-blue); }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-/* FIXED CSS: Only style the top icon */
+/* Icon Fix */
 .service-card > i { 
     font-size: 2rem; color: var(--primary-blue); margin-bottom: 20px; 
     background: #eef8ff; padding: 15px; border-radius: 10px; display: inline-block;
 }
-
-/* Reset the link arrow so it is small */
+/* Arrow Fix */
 .link-arrow i { 
     background: none !important; padding: 0 !important; 
     font-size: 0.9rem !important; margin-left: 5px; 
@@ -113,22 +112,31 @@ ul { list-style: none; }
 .about-text { flex: 2; }
 
 .section-tag {
-    color: var(--primary-blue); font-weight: 700; text-transform: uppercase; 
-    letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 10px;
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
 }
 .features-list { margin-top: 30px; }
 .feature-item { display: flex; gap: 15px; margin-bottom: 20px; }
 .feature-item i { color: var(--success-green); font-size: 1.2rem; margin-top: 3px; }
 .feature-item span { display: block; color: var(--text-grey); font-size: 0.9rem; }
 
-/* Premium Founder Card (NO PHOTO) */
+/* Premium Founder Card (Text Only) */
 .founder-card-premium {
-    background: white; padding: 40px; border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08); max-width: 400px; margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    max-width: 400px;
+    margin: 0 auto;
 }
 .founder-header-no-photo { text-align: center; margin-bottom: 20px; }
 .founder-header-no-photo h4 { margin-bottom: 2px; font-size: 1.4rem; }
 .founder-header-no-photo span { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; display: block; }
+
 .founder-card-premium hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
 .founder-quote { font-style: italic; color: var(--text-dark); line-height: 1.6; font-size: 1rem; text-align: center; }
 .founder-social { text-align: center; }
@@ -138,8 +146,12 @@ ul { list-style: none; }
 /* --- NEW MODERN CONTACT SECTION --- */
 .contact-section { padding: 80px 0; }
 .contact-wrapper {
-    display: flex; background: white; border-radius: 20px; overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05); border: 1px solid #eee;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 .contact-sidebar { flex: 1; background: #f8faff; padding: 50px; border-right: 1px solid #eee; }
 .contact-methods { margin-top: 40px; }

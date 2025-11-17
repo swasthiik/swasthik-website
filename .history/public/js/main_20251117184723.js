@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn.classList.remove('active');
@@ -58,14 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => sectionObserver.observe(section));
 
 
-    // --- 🚀 WEB3FORMS SUBMISSION (For Live Website) ---
+    // --- 🚀 REAL FULL STACK FORM SUBMISSION ---
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault(); // Stop page reload
 
-            // Validation Logic
+            // Validation
             let isValid = true;
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
@@ -75,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nameError = document.getElementById('name-error');
             const emailError = document.getElementById('email-error');
             const messageError = document.getElementById('message-error');
-            const originalBtnText = "Send Request";
+            const originalBtnText = "Send Message"; 
 
             [nameError, emailError, messageError].forEach(el => {
                 el.style.display = 'none'; el.textContent = '';
@@ -99,36 +98,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isValid) {
                 // 1. Visual Loading
-                submitBtn.textContent = "Sending...";
+                submitBtn.textContent = "Sending to Python...";
                 submitBtn.disabled = true;
                 submitBtn.style.opacity = "0.7";
 
-                // 2. Prepare Data for Web3Forms
-                const formData = new FormData(contactForm);
-
-                // 3. Send to Internet API (Web3Forms)
-                fetch('https://api.web3forms.com/submit', {
+                // 2. Send Data to Local Python Server
+                fetch('http://127.0.0.1:8000/submit-form', {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: nameInput.value,
+                        email: emailInput.value,
+                        message: messageInput.value
+                    })
                 })
                 .then(async (response) => {
-                    if (response.status == 200) {
+                    if (response.ok) {
                         // SUCCESS!
                         successMsg.style.display = 'block';
                         contactForm.reset();
-                        submitBtn.textContent = "Sent!";
+                        submitBtn.textContent = "Sent to Server!";
                         submitBtn.style.backgroundColor = "#22c55e"; 
                     } else {
-                        // ERROR
-                        console.log(response);
-                        alert("Something went wrong. Please try again.");
+                        // SERVER ERROR
+                        alert("Error connecting to Python backend.");
                         submitBtn.textContent = originalBtnText;
                         submitBtn.disabled = false;
                     }
                 })
                 .catch(error => {
-                    console.log(error);
-                    alert("Network error. Please check your internet.");
+                    // NETWORK ERROR (Server might be off)
+                    console.error(error);
+                    alert("Failed to connect. Is 'uvicorn' running in your terminal?");
                     submitBtn.textContent = originalBtnText;
                     submitBtn.disabled = false;
                 })
